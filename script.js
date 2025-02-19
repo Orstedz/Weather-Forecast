@@ -1,40 +1,45 @@
-const apiKey = "bbc6decc5279ecc1d434c79a5f27672d"; // Replace with your OpenWeatherMap API key
+const apiKey = "bbc6decc5279ecc1d434c79a5f27672d";
 const searchBtn = document.getElementById("searchBtn");
 const cityInput = document.getElementById("cityInput");
 const weatherResult = document.getElementById("weatherResult");
 
+// Event listener for the search button
 searchBtn.addEventListener("click", () => {
   const city = cityInput.value;
   if (city) {
-    fetchWeather(city);
+    fetchWeather(city); // Call the API
   } else {
     alert("Please enter a city name");
   }
 });
 
+// Function to fetch weather data using fetch()
 async function fetchWeather(city) {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   try {
-    const response = await fetch(url);
-    const data = await response.json();
+    const response = await fetch(url); // Call API
+    const data = await response.json(); // Parse JSON response
 
     if (data.cod === 200) {
-      displayWeather(data);
+      renderWeather(data); // Render data to HTML
     } else {
       weatherResult.innerHTML = `<p>City not found. Please try again.</p>`;
     }
   } catch (error) {
     console.error("Error fetching weather data:", error);
+    weatherResult.innerHTML = `<p>An error occurred. Please try again later.</p>`;
   }
 }
 
-function displayWeather(data) {
+// Function to render weather data to HTML
+function renderWeather(data) {
   const { name, main, weather } = data;
   const temperature = main.temp;
   const description = weather[0].description;
   const icon = weather[0].icon;
 
+  // Render the data
   weatherResult.innerHTML = `
     <h2>${name}</h2>
     <p>Temperature: ${temperature}°C</p>
