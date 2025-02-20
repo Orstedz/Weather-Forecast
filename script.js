@@ -1,6 +1,4 @@
-require("dotenv").config();
-
-const apiKey = process.env.API_KEY;
+const apiKey = "bbc6decc5279ecc1d434c79a5f27672d";
 const searchBtn = document.getElementById("searchBtn");
 const cityInput = document.getElementById("cityInput");
 const weatherResult = document.getElementById("weatherResult");
@@ -50,29 +48,6 @@ async function fetchWeather(city) {
   } finally {
     loading.style.display = "none"; // Hide loading spinner
   }
-}
-
-// Function to render weather data to HTML
-function renderWeather(data) {
-  const { name, main, weather } = data;
-  const temperature = main.temp;
-  const description = weather[0].description;
-  const icon = weather[0].icon;
-
-  // Render the data in the carousel
-  weatherResult.innerHTML = `
-    <div class="carousel-item active">
-      <div class="d-flex justify-content-between align-items-center px-5 gradient-custom" style="height: 230px">
-        <div>
-          <h2 class="text-dark display-2"><strong>${temperature}°C</strong></h2>
-          <p class="text-dark mb-0">${name}</p>
-        </div>
-        <div>
-          <img src="http://openweathermap.org/img/wn/${icon}@2x.png" width="150px">
-        </div>
-      </div>
-    </div>
-  `;
 }
 
 // Function to render weather data to HTML
