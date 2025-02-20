@@ -61,29 +61,6 @@ function renderWeather(data) {
 
   // Render the data in the carousel
   weatherResult.innerHTML = `
-    <div class="carousel-item active">
-      <div class="d-flex justify-content-between align-items-center px-5 gradient-custom" style="height: 230px">
-        <div>
-          <h2 class="text-dark display-2"><strong>${temperature}°C</strong></h2>
-          <p class="text-dark mb-0">${name}</p>
-        </div>
-        <div>
-          <img src="http://openweathermap.org/img/wn/${icon}@2x.png" width="150px">
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-// Function to render weather data to HTML
-function renderWeather(data) {
-  const { name, main, weather } = data;
-  const temperature = main.temp;
-  const description = weather[0].description;
-  const icon = weather[0].icon;
-
-  // Render the data in the carousel
-  weatherResult.innerHTML = `
     <div class="carousel-indicators">
       <button
         type="button"
