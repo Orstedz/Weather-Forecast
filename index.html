@@ -5,17 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Forecast</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- Add MDBootstrap CSS (required for the carousel) -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <!-- Add FontAwesome for icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <div class="container">
-      <h1>Weather Forecast</h1>
-      <input type="text" id="cityInput" placeholder="Enter city name" />
-      <button id="searchBtn">Get Weather</button>
-      <div id="weatherResult">
-        <!-- Weather data will be rendered here -->
+      <h1 class="text-center my-4">Weather Forecast</h1>
+      <div class="d-flex justify-content-center mb-4">
+        <input
+          type="text"
+          id="cityInput"
+          class="form-control w-50 me-2"
+          placeholder="Enter city name"
+        />
+        <button id="searchBtn" class="btn btn-primary">Get Weather</button>
+      </div>
+      <div id="loading" class="text-center" style="display: none">
+        Loading...
+      </div>
+      <div
+        id="weatherCarousel"
+        class="carousel slide m-5"
+        data-mdb-ride="carousel"
+        data-mdb-carousel-init
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-mdb-target="#weatherCarousel"
+            data-mdb-slide-to="0"
+            class="active bg-secondary"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-mdb-target="#weatherCarousel"
+            data-mdb-slide-to="1"
+            class="bg-secondary"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-mdb-target="#weatherCarousel"
+            data-mdb-slide-to="2"
+            class="bg-secondary"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner rounded-5" id="weatherResult">
+          <!-- Weather data will be rendered here -->
+        </div>
       </div>
     </div>
+    <!-- Add MDBootstrap JS (required for the carousel) -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
+    ></script>
     <script src="script.js"></script>
   </body>
 </html>
