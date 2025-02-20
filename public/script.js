@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 const apiKey = process.env.API_KEY;
+console.log("API Key:", apiKey);
 const searchBtn = document.getElementById("searchBtn");
 const cityInput = document.getElementById("cityInput");
 const weatherResult = document.getElementById("weatherResult");
