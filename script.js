@@ -4,16 +4,6 @@ const cityInput = document.getElementById("cityInput");
 const weatherResult = document.getElementById("weatherResult");
 const loading = document.getElementById("loading");
 
-// Event listener for the search button
-searchBtn.addEventListener("click", () => {
-  const city = cityInput.value;
-  if (city) {
-    fetchWeather(city); // Call the API
-  } else {
-    alert("Please enter a city name");
-  }
-});
-
 // Event listener for Enter key press
 cityInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
