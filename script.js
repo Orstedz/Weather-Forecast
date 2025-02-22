@@ -2,7 +2,6 @@ const apiKey = "bbc6decc5279ecc1d434c79a5f27672d";
 const searchBtn = document.getElementById("searchBtn");
 const cityInput = document.getElementById("cityInput");
 const weatherResult = document.getElementById("weatherResult");
-const forecastResult = document.getElementById("forecastCards"); // New element for forecast
 const loading = document.getElementById("loading");
 
 // Event listener for the search button
@@ -64,11 +63,10 @@ async function fetchForecast(city) {
     if (data.cod === "200") {
       renderForecast(data.list); // Render 5-day forecast
     } else {
-      forecastResult.innerHTML = `<p>Forecast not available.</p>`;
+      console.error("Forecast not available.");
     }
   } catch (error) {
     console.error("Error fetching forecast data:", error);
-    forecastResult.innerHTML = `<p>An error occurred. Please try again later.</p>`;
   }
 }
 
@@ -97,13 +95,6 @@ function renderWeather(data) {
         class="bg-secondary"
         aria-label="Slide 2"
       ></button>
-      <button
-        type="button"
-        data-mdb-target="#weatherCarousel"
-        data-mdb-slide-to="2"
-        class="bg-secondary"
-        aria-label="Slide 3"
-      ></button>
     </div>
     <div class="carousel-inner rounded-5">
       <div class="carousel-item active">
@@ -117,7 +108,12 @@ function renderWeather(data) {
           </div>
         </div>
       </div>
-      <!-- Additional carousel items here -->
+      <!-- Slide 2: 5-Day Forecast -->
+      <div class="carousel-item">
+        <div class="d-flex justify-content-around text-center align-items-center px-5 bg-body-tertiary" style="height: 230px" id="forecastSlide">
+          <!-- 5-Day Forecast will be rendered here -->
+        </div>
+      </div>
     </div>
     <button
       class="carousel-control-prev"
@@ -151,11 +147,13 @@ function renderWeather(data) {
 
 // Function to render 5-day forecast data
 function renderForecast(forecastList) {
+  const forecastSlide = document.getElementById("forecastSlide");
+
   // Filter the forecast data to get one entry per day
   const dailyForecast = forecastList.filter((item, index) => index % 8 === 0);
 
-  // Render the forecast cards
-  forecastResult.innerHTML = dailyForecast
+  // Render the forecast cards inside Slide 2
+  forecastSlide.innerHTML = dailyForecast
     .map((item) => {
       const date = new Date(item.dt * 1000).toLocaleDateString("en-US", {
         weekday: "short",
@@ -167,11 +165,11 @@ function renderForecast(forecastList) {
       const description = item.weather[0].description;
 
       return `
-        <div class="card">
-          <p><strong>${date}</strong></p>
-          <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${description}">
-          <p><strong>${temperature}°C</strong></p>
-          <p>${description}</p>
+        <div class="flex-column">
+          <p class="small"><strong>${temperature}°C</strong></p>
+          <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${description}" width="50px">
+          <p class="mb-0"><strong>${date}</strong></p>
+          <p class="mb-0 text-muted">${description}</p>
         </div>
       `;
     })
