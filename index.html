@@ -54,24 +54,28 @@
             class="bg-secondary"
             aria-label="Slide 2"
           ></button>
-          <button
-            type="button"
-            data-mdb-target="#weatherCarousel"
-            data-mdb-slide-to="2"
-            class="bg-secondary"
-            aria-label="Slide 3"
-          ></button>
         </div>
         <div class="carousel-inner rounded-5" id="weatherResult">
-          <!-- Current weather data will be rendered here -->
+          <!-- Weather data will be rendered here -->
         </div>
-      </div>
-      <!-- Add a new section for the 5-day forecast -->
-      <div id="forecastResult" class="mt-5">
-        <h2 class="text-center mb-4">5-Day Forecast</h2>
-        <div class="row" id="forecastCards">
-          <!-- Forecast cards will be rendered here -->
-        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-mdb-target="#weatherCarousel"
+          data-mdb-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-mdb-target="#weatherCarousel"
+          data-mdb-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
     <!-- Add MDBootstrap JS (required for the carousel) -->

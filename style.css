@@ -45,6 +45,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 10px; /* Add spacing between forecast cards */
 }
 
 .carousel-item .fa-sun,
@@ -53,24 +54,30 @@ body {
   color: #ddd;
 }
 
-/* Forecast cards styling */
-#forecastCards .card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 10px;
-  padding: 15px;
-  text-align: center;
-  flex: 1 1 calc(20% - 20px); /* 5 cards in a row */
-  max-width: calc(20% - 20px);
+/* Styles for forecast cards in Slide 2 */
+#forecastSlide {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-#forecastCards .card img {
+#forecastSlide .flex-column {
+  text-align: center;
+  padding: 10px;
+}
+
+#forecastSlide img {
   width: 50px;
   height: 50px;
+  margin-bottom: 10px;
 }
 
-#forecastCards .card p {
+#forecastSlide p {
   margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+#forecastSlide .small {
+  font-size: 0.8rem;
 }
