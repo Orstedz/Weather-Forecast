@@ -1,30 +1,25 @@
 /* General Styles */
 body {
-  font-family: "Poppins", sans-serif; /* Modern font */
-  background: linear-gradient(
-    135deg,
-    #0f2027,
-    #203a43,
-    #2c5364
-  ); /* Gradient background */
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   margin: 0;
   padding: 20px;
-  color: #f0f0f0; /* Light gray text */
+  color: #f0f0f0;
 }
 
 .container {
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
-  backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 25px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 800px;
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 h1 {
@@ -32,7 +27,7 @@ h1 {
   font-weight: 600;
   text-align: center;
   margin-bottom: 20px;
-  color: #f0f0f0; /* Light gray for headings */
+  color: #f0f0f0;
 }
 
 input,
@@ -46,17 +41,17 @@ button {
 
 input {
   width: 70%;
-  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
-  color: #f0f0f0; /* Light gray text */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+  background: rgba(255, 255, 255, 0.2);
+  color: #f0f0f0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 input::placeholder {
-  color: rgba(240, 240, 240, 0.7); /* Light gray placeholder text */
+  color: rgba(240, 240, 240, 0.7);
 }
 
 button {
-  background-color: #00b4d8; /* Bright teal for button */
+  background-color: #00b4d8;
   color: #fff;
   cursor: pointer;
 }
@@ -73,7 +68,7 @@ button {
 
 #loading {
   font-size: 1.2rem;
-  color: #f0f0f0; /* Light gray for loading text */
+  color: #f0f0f0;
 }
 
 /* Carousel Styles */
@@ -85,18 +80,14 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Current Weather Slide */
 .gradient-custom {
-  background: linear-gradient(
-    135deg,
-    #00b4d8,
-    #90e0ef
-  ); /* Teal to light blue gradient */
+  background: linear-gradient(135deg, #00b4d8, #90e0ef);
   border-radius: 12px;
   padding: 20px;
   text-align: center;
@@ -106,13 +97,13 @@ button {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 10px;
-  color: #f0f0f0; /* Light gray for headings */
+  color: #f0f0f0;
 }
 
 .gradient-custom p {
   font-size: 1.2rem;
   margin-bottom: 0;
-  color: #f0f0f0; /* Light gray for text */
+  color: #f0f0f0;
 }
 
 .gradient-custom img {
@@ -132,15 +123,15 @@ button {
 #forecastSlide .flex-column {
   text-align: center;
   padding: 15px;
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   margin: 10px;
   transition: transform 0.3s ease;
 }
 
 #forecastSlide .flex-column:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
+  transform: translateY(-5px);
 }
 
 #forecastSlide img {
@@ -152,15 +143,15 @@ button {
 #forecastSlide p {
   margin: 5px 0;
   font-size: 0.9rem;
-  color: #f0f0f0; /* Light gray for text */
+  color: #f0f0f0;
 }
 
 #forecastSlide .small {
   font-size: 0.8rem;
-  color: #cccccc; /* Light gray for smaller text */
+  color: #cccccc;
 }
 
 /* Override Bootstrap's .text-muted class */
 body .text-muted {
-  color: #cccccc !important; /* Light gray color */
+  color: #cccccc !important;
 }
