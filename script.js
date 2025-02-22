@@ -41,6 +41,7 @@ async function fetchWeather(city) {
 
     if (data.cod === 200) {
       renderWeather(data); // Render current weather
+      document.getElementById("weatherCarousel").style.display = "block"; // Show the carousel
     } else {
       weatherResult.innerHTML = `<p>City not found. Please try again.</p>`;
     }
