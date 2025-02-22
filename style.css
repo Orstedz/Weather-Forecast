@@ -1,70 +1,146 @@
+/* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  font-family: "Poppins", sans-serif; /* Modern font */
+  background: linear-gradient(
+    135deg,
+    #0f2027,
+    #203a43,
+    #2c5364
+  ); /* Gradient background */
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   margin: 0;
   padding: 20px;
+  color: #f0f0f0; /* Light gray text */
 }
 
 .container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
   width: 100%;
   max-width: 800px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
 }
 
-.gradient-custom {
-  /* fallback for old browsers */
-  background: #ffffff;
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f0f0f0; /* Light gray for headings */
+}
 
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(
-    to right,
-    rgba(255, 255, 255, 1),
-    rgba(255, 236, 210, 1)
-  );
+input,
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
 
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 1),
-    rgba(255, 236, 210, 1)
-  );
+input {
+  width: 70%;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  color: #f0f0f0; /* Light gray text */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+}
+
+input::placeholder {
+  color: rgba(240, 240, 240, 0.7); /* Light gray placeholder text */
+}
+
+button {
+  background-color: #00b4d8; /* Bright teal for button */
+  color: #fff;
+  cursor: pointer;
+}
+
+.carousel-control-prev:hover {
+  background-color: rgba(0, 150, 199, 0.5);
+  border-radius: 12px 0 0 12px;
+}
+
+.carousel-control-next:hover {
+  background-color: rgba(0, 150, 199, 0.5);
+  border-radius: 0 12px 12px 0;
+}
+
+#loading {
+  font-size: 1.2rem;
+  color: #f0f0f0; /* Light gray for loading text */
+}
+
+/* Carousel Styles */
+.carousel {
+  margin-top: 20px;
 }
 
 .carousel-item {
-  height: 230px;
-}
-
-.carousel-item .flex-column {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: 0 10px; /* Add spacing between forecast cards */
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
 }
 
-.carousel-item .fa-sun,
-.carousel-item .fa-cloud,
-.carousel-item .fa-cloud-showers-heavy {
-  color: #ddd;
+/* Current Weather Slide */
+.gradient-custom {
+  background: linear-gradient(
+    135deg,
+    #00b4d8,
+    #90e0ef
+  ); /* Teal to light blue gradient */
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
 }
 
-/* Styles for forecast cards in Slide 2 */
+.gradient-custom h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #f0f0f0; /* Light gray for headings */
+}
+
+.gradient-custom p {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  color: #f0f0f0; /* Light gray for text */
+}
+
+.gradient-custom img {
+  width: 100px;
+  height: 100px;
+}
+
+/* Forecast Slide */
 #forecastSlide {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  padding: 20px;
 }
 
 #forecastSlide .flex-column {
   text-align: center;
-  padding: 10px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+#forecastSlide .flex-column:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
 }
 
 #forecastSlide img {
@@ -76,8 +152,15 @@ body {
 #forecastSlide p {
   margin: 5px 0;
   font-size: 0.9rem;
+  color: #f0f0f0; /* Light gray for text */
 }
 
 #forecastSlide .small {
   font-size: 0.8rem;
+  color: #cccccc; /* Light gray for smaller text */
+}
+
+/* Override Bootstrap's .text-muted class */
+body .text-muted {
+  color: #cccccc !important; /* Light gray color */
 }
