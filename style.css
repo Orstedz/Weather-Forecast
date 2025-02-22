@@ -72,6 +72,10 @@ button {
 }
 
 /* Carousel Styles */
+#weatherCarousel {
+  display: none;
+}
+
 .carousel {
   margin-top: 20px;
 }
