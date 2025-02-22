@@ -4,13 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Forecast</title>
+
     <link rel="stylesheet" href="style.css" />
+
     <!-- Add MDBootstrap CSS (required for the carousel) -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"
       rel="stylesheet"
     />
+
     <!-- Add FontAwesome for icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
@@ -54,17 +62,28 @@
             class="bg-secondary"
             aria-label="Slide 2"
           ></button>
-          <button
-            type="button"
-            data-mdb-target="#weatherCarousel"
-            data-mdb-slide-to="2"
-            class="bg-secondary"
-            aria-label="Slide 3"
-          ></button>
         </div>
         <div class="carousel-inner rounded-5" id="weatherResult">
           <!-- Weather data will be rendered here -->
         </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-mdb-target="#weatherCarousel"
+          data-mdb-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-mdb-target="#weatherCarousel"
+          data-mdb-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
     <!-- Add MDBootstrap JS (required for the carousel) -->
